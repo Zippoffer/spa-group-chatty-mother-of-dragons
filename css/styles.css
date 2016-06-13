@@ -14,7 +14,11 @@ body {
 }
 
 #navbar {
-	background-color: teal;
+	background-color: lightgreen;
+	/*width: auto;
+	margin: auto;
+	border: 1px solid black;
+	margin-top: 1em;*/
 
 }
 
