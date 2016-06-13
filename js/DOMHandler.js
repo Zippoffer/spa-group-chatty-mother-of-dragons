@@ -5,7 +5,6 @@ var elMessageInput = document.getElementById('messageInput'),
 	elMessagesDiv = document.getElementById('messagesDiv'),
 	elUserSelect = document.getElementById('userSelect');
 
-
 console.log(elLargeTextCheck);
 elThemeCheck.addEventListener("click", themeCheckHandler);
 elLargeTextCheck.addEventListener("click", textChangeHandler);
@@ -31,7 +30,7 @@ function messageInputHandler(event) {
 	var message = elMessageInput.value;
 	if (event.keyCode === 13) {
 		if (isValid(message)) {
-			Chatty.writeMessages(message);
+			Chatty.printMessage(message);
 		}
 	}
 }
