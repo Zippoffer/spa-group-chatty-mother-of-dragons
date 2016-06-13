@@ -9,9 +9,12 @@ var Chatty = (function () {
 
     for (var i = 0; i < message.length; i++){
       var counter = i;
-      htmlString += `<div id="message-${counter}">`
-      
+      htmlString += `<div id="message-${counter}" class="message">`;
+      htmlString += `<div class="content">${message[i]}</div>`;
+      htmlString += `<button type="submit">Delete</button>`;
+      htmlString += `</div>`;
     }
+    messageContainer.innerHTML = htmlString;
   };
 
   return Chatty;
