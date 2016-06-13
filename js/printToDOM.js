@@ -11,12 +11,15 @@ var Chatty = (function () {
       var time = timeStamp.toUTCString();
       htmlString += `<div id="message-${counter}" class="message">`;
       htmlString += `<div class="content">${message[i]} | ${time}</div>`;
+      htmlString += `<button type="edit" id="edit-${counter}">Edit</button>`;
       htmlString += `<button type="submit" id="delete-${counter}">Delete</button>`;
       htmlString += `</div>`;
     }
     messageContainer.innerHTML = htmlString;
     Chatty.deleteCounter();
+    Chatty.editCounter();
   };
+
 
   Chatty.deleteCounter = function () {
     var messages = document.getElementsByClassName("message");
@@ -34,12 +37,6 @@ var Chatty = (function () {
         console.log("messageToDelete: ", messageToDelete );
 
         messageToDelete.parentNode.removeChild(messageToDelete);
-
-        // console.log("counter: ", counter);
-        // messageToDelete.parentNode.removeChild("messageToDelete");
-        // console.log("delete: ", event.target);
-        // var element = document.getElementById("element-id");
-        // element.parentNode.removeChild(element);
       }
     }
   };
