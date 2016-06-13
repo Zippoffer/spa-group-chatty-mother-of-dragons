@@ -9,14 +9,17 @@ var Chatty = (function () {
       var timeStamp = new Date();
       var time = timeStamp.toUTCString();
       htmlString += `<div id="message-${counter}" class="message">`;
-      htmlString += `<div class="content">${message[i]} | ${time}</div>`;
+      htmlString += `<div id="content-${counter}" class="content">${message[counter]}</div> <div class="time">${time}</div>`;
+      htmlString += `<button type="edit" id="edit-${counter}">Edit</button>`;
       htmlString += `<button type="submit" id="delete-${counter}">Delete</button>`;
       htmlString += `</div>`;
     }
 
     messageContainer.innerHTML = htmlString;
     Chatty.deleteCounter();
+    Chatty.editCounter();
   };
+
 
   Chatty.deleteCounter = function () {
     var messages = document.getElementsByClassName("message");
