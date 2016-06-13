@@ -31,6 +31,19 @@ body {
 	margin: 1%;
 	margin-left: 4em;
 	
+	/*background-color: lightgreen;
+	z-index: 0;*/
+	/*position: absolute;*/
+}
+
+.darkTheme {
+	background-color: darkgrey !important;
+	color: white;
+}
+
+.largeText {
+	font-size: larger;
+
 }
 
 #clearButton {

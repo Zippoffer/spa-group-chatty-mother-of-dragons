@@ -5,33 +5,41 @@ var elMessageInput = document.getElementById('messageInput'),
 	elMessagesDiv = document.getElementById('messagesDiv'),
 	elUserSelect = document.getElementById('userSelect');
 
-console.log(elLargeTextCheck);
 elThemeCheck.addEventListener("click", themeCheckHandler);
 elLargeTextCheck.addEventListener("click", textChangeHandler);
 elBtnClear.addEventListener("click", clearButtonHandler);
 elMessageInput.addEventListener("keyup", messageInputHandler);
-// elUserSelect.addEventListener();
 
 function themeCheckHandler() {
-	console.log('theme');
+	if (elThemeCheck.checked === true) {
+		elMessagesDiv.classList.add('darkTheme');
+	} else if (elThemeCheck.checked === false) {
+		elMessagesDiv.classList.remove('darkTheme');
+	}
 } 
+
 function textChangeHandler() {
-	console.log('text');
+	if (elLargeTextCheck.checked === true) {
+		elMessagesDiv.classList.add('largeText');
+	} else if (elLargeTextCheck.checked === false) {
+		elMessagesDiv.classList.remove('largeText');
+	}
 } 
+
 function clearButtonHandler() {
 	var el = document.getElementsByClassName('message');
 	for (var x = el.length - 1; x > -1; x--) {
-		console.log(x);
-		console.log(el[x]);
 		el[x].remove();
 	}
 } 
+
 function messageInputHandler(event) {
 	var message = elMessageInput.value;
 	if (event.keyCode === 13) {
 		if (isValid(message)) {
 			Chatty.printMessage(message);
 		}
+		elMessageInput.value = '';
 	}
 }
 

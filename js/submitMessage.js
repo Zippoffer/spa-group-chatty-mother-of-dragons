@@ -12,13 +12,15 @@ var Chatty = (function () {
     var time = timeStamp.toUTCString();
     var htmlString =  `<div id="message-${numMessages}" class="message">`;
     htmlString += `<div class="content">${message} | ${time}</div>`;
+    htmlString += `<button type="edit" id="edit-${counter}">Edit</button>`;
     htmlString += `<button type="submit" id=
     delete-${numMessages}>Delete</button>`;
     htmlString += `</div>`;
 
     messageContainer.innerHTML += htmlString;
 
-    
+    Chatty.deleteCounter();
+    Chatty.editCounter();
 
   };
 
