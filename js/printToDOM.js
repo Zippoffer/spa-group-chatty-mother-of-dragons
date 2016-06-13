@@ -31,7 +31,6 @@ var Chatty = (function () {
         messageToDelete.parentNode.removeChild(messageToDelete);
       }
     }
-    
   };
 
   return Chatty;

@@ -1,7 +1,7 @@
 var Chatty = (function () {
 
-  Chatty.editMessage = function () {
-    
+  Chatty.editCounter = function () {
+
   }
 
   return Chatty;
