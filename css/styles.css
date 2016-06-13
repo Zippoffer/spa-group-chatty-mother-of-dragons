@@ -1,0 +1,15 @@
+#messagesDiv {
+	background-color: wheat;
+	width: 600px;
+	height: 500px;
+	margin: auto;
+	border: 1px solid black;
+}
+
+#navbar {
+	background-color: green;
+	z-index: 0;
+	/*position: absolute;*/
+	
+}
+
