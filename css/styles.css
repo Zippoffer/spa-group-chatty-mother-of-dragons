@@ -1,25 +1,32 @@
+body {
+	width: auto;
+	background-color: black;
+}
+
 #messagesDiv {
 	background-color: wheat;
-	width: 600px;
+	width: 80%;
 	height: 500px;
 	margin: auto;
 	border: 1px solid black;
+	margin-top: 10em;
 }
 
 #navbar {
-	background-color: green;
+	background-color: teal;
+	/*opacity: .5;*/
+
 	/*z-index: 0;*/
 }
 
 #logo{
 	width: auto;
-	/*display: inline-block;*/
+	
 }
 
 #messageInput {
 	margin: 1%;
-	/*display: inline-block;*/
-	/*margin-left: 4em;*/
+	
 }
 
 #clearButton {
@@ -27,17 +34,11 @@
 }
 
 #themeCheck {
-	 position: absolute;
-    bottom: 8px;
-    left: 300px;
-    font-size: 18px;
+	 margin-left: 12em;
 
 
 }
 
 #largeTextCheck {
-	 position: absolute;
-    bottom: 8px;
-    left: 126px;
-    font-size: 18px;
+	margin-left: 12em;
 }
