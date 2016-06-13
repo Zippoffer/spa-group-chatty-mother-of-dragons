@@ -1,6 +1,6 @@
 body {
 	width: auto;
-	background-color: black;
+	/*background-color: black;*/
 }
 
 #messagesDiv {
@@ -9,18 +9,13 @@ body {
 	height: 500px;
 	margin: auto;
 	border: 1px solid black;
-<<<<<<< HEAD
 	margin-top: 10em;
-=======
-	margin-top: 100px;
->>>>>>> 1f0ca06beef36dc8ef04d6500f6131ee282655c2
+
 }
 
 #navbar {
 	background-color: teal;
-	/*opacity: .5;*/
 
-	/*z-index: 0;*/
 }
 
 #logo{
@@ -30,11 +25,13 @@ body {
 
 #messageInput {
 	margin: 1%;
+	margin-left: 4em;
 	
 }
 
 #clearButton {
 	margin: 1%;
+	font-size: 1em;
 }
 
 #themeCheck {
@@ -44,5 +41,9 @@ body {
 }
 
 #largeTextCheck {
+	margin-left: 12em;
+}
+
+#userSelect {
 	margin-left: 12em;
 }
