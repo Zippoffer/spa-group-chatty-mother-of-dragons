@@ -11,6 +11,14 @@
 	background-color: green;
 	z-index: 0;
 	/*position: absolute;*/
-	
+}
+
+.darkTheme {
+	background-color: darkgrey !important;
+	color: white;
+}
+
+.largeText {
+	font-size: larger;
 }
 
