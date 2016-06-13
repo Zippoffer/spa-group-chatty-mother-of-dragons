@@ -9,7 +9,11 @@ body {
 	height: 500px;
 	margin: auto;
 	border: 1px solid black;
+<<<<<<< HEAD
 	margin-top: 10em;
+=======
+	margin-top: 100px;
+>>>>>>> 1f0ca06beef36dc8ef04d6500f6131ee282655c2
 }
 
 #navbar {
