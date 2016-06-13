@@ -19,4 +19,4 @@ var chatty = (function(chat) {
 
 	return chat;
 
-})(chatty || {});
+})(Chatty || {});
