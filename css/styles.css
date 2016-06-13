@@ -1,16 +1,66 @@
+body {
+	width: auto;
+	/*background-color: black;*/
+}
+
 #messagesDiv {
 	background-color: wheat;
-	width: 600px;
+	width: 80%;
 	height: 500px;
 	margin: auto;
 	border: 1px solid black;
-	margin-top: 100px;
+	margin-top: 10em;
+
 }
 
 #navbar {
-	background-color: green;
-	z-index: 0;
-	/*position: absolute;*/
+	background-color: lightgreen;
+	/*width: auto;
+	margin: auto;
+	border: 1px solid black;
+	margin-top: 1em;*/
+
+}
+
+#logo{
+	width: auto;
 	
 }
 
+#messageInput {
+	margin: 1%;
+	margin-left: 4em;
+	
+	/*background-color: lightgreen;
+	z-index: 0;*/
+	/*position: absolute;*/
+}
+
+.darkTheme {
+	background-color: darkgrey !important;
+	color: white;
+}
+
+.largeText {
+	font-size: larger;
+
+}
+
+#clearButton {
+	margin: 1%;
+	font-size: 1em;
+}
+
+#themeCheck {
+	 margin-left: 12em;
+
+
+}
+
+#largeTextCheck {
+	margin-left: 12em;
+}
+
+#userSelect {
+	margin-left: 12em;
+}

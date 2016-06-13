@@ -4,31 +4,44 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title></title>
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" media="(max-width: 1036px)" href="css/styles.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
 </head>
 <body>
-  <nav id="navbar" class="navbar navbar-inverse navbar-fixed-top">
-    <ul>
-      <div id="nav">
-        <div class="row">
-          <article id="logo" class="col-sm-4">hello</article>
-          <input id="messageInput" class="col-sm-4" type="text" name="messageInput">
-          <button id="clearButton" class="col-sm-4" type="button">clear</button>
+
+  <nav  id="navbar" class="navbar navbar-inverse navbar-fixed-top">
+  	<ul>
+  		<div id="nav">
+
+
+	  		<div class="row">
+
+		  		<article id="logo" class="col-sm-4">
+				  	<a class="navbar-brand" rel="home" href="#" title="Buy Sell Rent Everyting">
+		       			 <img style="max-width:50px; margin-top: -7px; height: 60px"
+		            	 src="https://thingsisayanddobytalise.files.wordpress.com/2013/04/little-miss-chatterbox.jpg" class="img-circle" class="img-responsive">
+	   				 </a>
+    			</article>
+
+		  		<input class="col-sm-4" id="messageInput" class="col-sm-4" type="text" name="messageInput" placeholder="input message here">
+		  		<button class="span4" id="clearButton" class="col-sm-4" type="button">clear</button>
+	  		</div>
+
+
+	  		<div class="row">
+		  		<input class="span6" id="themeCheck" type="checkbox" name="theme">theme</input>
+		  		<input class="span6" id="largeTextCheck" type="checkbox" name="largeText">large text</input>
+          <select class="span6" name="" id="userSelect"></select>
         </div>
-        <div class="row">
-          <input id="themeCheck" type="checkbox" name="theme">theme</input>
-          <input id="largeTextCheck" type="checkbox" name="largeText">large text</input>
-          <select name="" id="userSelect"></select>
-        </div>
+
       </div>
     </ul>
   </nav>
   
-  <div class="row">
-    <div id="messagesDiv">
-    <p>Test</p> 
+  <div  class="row">
+    <div class="span8" id="messagesDiv">
+    <p></p> 
     </div>
   </div>
 
