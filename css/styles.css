@@ -8,8 +8,36 @@
 
 #navbar {
 	background-color: green;
-	z-index: 0;
-	/*position: absolute;*/
-	
+	/*z-index: 0;*/
 }
 
+#logo{
+	width: auto;
+	/*display: inline-block;*/
+}
+
+#messageInput {
+	margin: 1%;
+	/*display: inline-block;*/
+	/*margin-left: 4em;*/
+}
+
+#clearButton {
+	margin: 1%;
+}
+
+#themeCheck {
+	 position: absolute;
+    bottom: 8px;
+    left: 300px;
+    font-size: 18px;
+
+
+}
+
+#largeTextCheck {
+	 position: absolute;
+    bottom: 8px;
+    left: 126px;
+    font-size: 18px;
+}
