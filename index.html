@@ -4,11 +4,38 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title></title>
-  <link rel="stylesheet" href="">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
 </head>
 <body>
+  <nav id="navbar" class="navbar navbar-inverse navbar-fixed-top">
+    <ul>
+      <div id="nav">
+        <div class="row">
+          <article id="logo" class="col-sm-4">hello</article>
+          <input id="messageInput" class="col-sm-4" type="text" name="messageInput">
+          <button id="clearButton" class="col-sm-4" type="button">clear</button>
+        </div>
+        <div class="row">
+          <input id="themeCheck" type="checkbox" name="theme">theme</input>
+          <input id="largeTextCheck" type="checkbox" name="largeText">large text</input>
+        </div>
+      </div>
+
+
+    </ul>
+  </nav>
   
- 	<script src="js/DOMHandler.js"></script>
- 	<script src="js/users.js"></script>
+  <div class="row">
+    <div id="messagesDiv">
+    <p>Test</p> 
+    </div>
+  </div>
+
+	<script src="js/DOMHandler.js"></script>
+	<script src="js/users.js"></script>
+  <script src="js/initJSON.js"></script>
+  <script src="js/printToDOM.js"></script>
 </body>
 </html>
