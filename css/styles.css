@@ -10,13 +10,40 @@ body {
 	max-width: 700px;
 	min-height: 500px;
 	margin: auto;
-	margin-top: 160px;
-	box-shadow: inset 10px 0 30px black;
+	margin-top: 140px;
+	box-shadow: inset 5px 0 30px black;
 	position: center;
+  margin-bottom: 60px;
 }
 
 .message {
 	padding: 20px;
+}
+
+.message .content {
+  float: left;
+}
+
+.message .time {
+  /*float: right;*/
+  color: #ad7d39;
+  clear: both;
+}
+
+.darkTheme .message .time {
+  /*float: right;*/
+  color: #676462;
+  clear: both;
+}
+
+.darkTheme button {
+  color: black;
+}
+
+.message button {
+  float: right;
+  margin-right: 3px;
+  margin-left:  3px;
 }
 
 #navbar {

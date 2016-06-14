@@ -11,9 +11,9 @@ var Chatty = (function (chat) {
     messageCounter++;
     var string = `<div id="message--${messageCounter}" class="message">
                     <div id="content--${messageCounter}" class="content">${message}</div> 
-                    <div class="time">${time}</div>
                     <button type="edit" id="edit--${messageCounter}" class="btnEdit">Edit</button>
                     <button type="submit" id="delete--${messageCounter}" class="btnDelete">Delete</button>
+                    <div class="time">${time}</div>
                   </div>`;
     return string;
   };

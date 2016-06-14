@@ -5,7 +5,7 @@ var Chatty = (function () {
   Chatty.editDiv;
 
   Chatty.editCounter = function (content) {
-    Chatty.editEnabled = true;
+    // Chatty.editEnabled = true;
     // console.log("edit enabled: ", Chatty.editEnabled );
     var messages = document.getElementsByClassName("message");
 
@@ -13,7 +13,6 @@ var Chatty = (function () {
       var counter = i;
       var editCounter = document.getElementById( `edit-${counter}` );
       editCounter.addEventListener("click", editMessage);
-
     }
   };
 
@@ -55,16 +54,3 @@ Chatty.editMessage = function() {
 })(Chatty);
 
 Chatty.editCounter();
-
-// var messages = document.getElementsByClassName("message");
-
-//     for (var i = 0; i < messages.length; i++) {
-//       var counter = i;
-//       var deleteCounter = document.getElementById( `delete-${i}` );
-//       deleteCounter.addEventListener("click", deleteMessage);
-//       function deleteMessage () {
-//         var deleteButton = event.target ;
-//         var messageToDelete = deleteButton.parentNode;
-//         messageToDelete.parentNode.removeChild(messageToDelete);
-//       }
-//     }
