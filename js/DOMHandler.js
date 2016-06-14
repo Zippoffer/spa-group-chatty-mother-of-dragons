@@ -69,3 +69,14 @@ function addEditDeleteHandlers() {
 		elBtnDelete[i].addEventListener('click', Chatty.deleteMessage);
 	}
 }
+
+function loadUserSelectElement() {
+	var myArray = Chatty.getUsers();
+	myArray.forEach(function(obj) {
+		elUserSelect.innerHTML += getOptionString(obj.name);
+	});
+}
+
+function getOptionString(name) {
+	return `<option value="${name}">${name}</option>`;
+}
