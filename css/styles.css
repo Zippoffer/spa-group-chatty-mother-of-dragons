@@ -92,6 +92,12 @@ body {
 	color: orange;
 	border: none;
 }
+#clearButton:disabled {
+	background-color: lightgrey;
+	color: grey;
+	box-shadow: none;
+	pointer-events: none;
+}
 
 #themeCheck {
 	 margin-left: 12em;

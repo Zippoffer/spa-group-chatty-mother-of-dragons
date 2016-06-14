@@ -15,7 +15,6 @@ var Chatty = (function (chat) {
   };
 
   chat.getHtmlString = function(id, message, time, user) {
-    messageCounter++;
     var string = `<div id="message--${id}" class="message">
                     <div class="user">${user}: </div>
                     <div id="content--${id}" class="content">${message}</div> 
