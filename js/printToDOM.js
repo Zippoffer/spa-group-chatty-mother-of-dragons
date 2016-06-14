@@ -7,6 +7,13 @@ var Chatty = (function (chat) {
     var timeStamp = new Date();
     var time = timeStamp.toUTCString();
     if (messArray.length >= 20) { literalMessageCounter ++; };
+
+    if (elMessageInput.value === "display all") { 
+      elMessageInput.value = "ytf"; 
+      literalMessageCounter = 0; 
+      console.log("elMessage", elMessageInput.value);
+    };
+
     for (var x = literalMessageCounter; x < messArray.length; x++) {
       elMessagesDiv.innerHTML += Chatty.getHtmlString(messArray[x].id, messArray[x].message, time, messArray[x].user);
     }    
