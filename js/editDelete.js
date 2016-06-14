@@ -25,11 +25,10 @@ var Chatty = (function(chat) {
 	};
 
 	chat.commitEdit = function(message) {
-		messageToBeEdited.innerHTML = message;
-		console.log('id to be edited', idToBeEdited);
-		console.log('before', Chatty.messages[idToBeEdited].message);
-		Chatty.messages[idToBeEdited - 1].message = message;
-		console.log('after', Chatty.messages[idToBeEdited].message);
+		var timeStamp = new Date();
+    	var time = timeStamp.toUTCString();
+		messageToBeEdited.innerHTML = `${message} -- edited @ ${time}`;
+		Chatty.messages[idToBeEdited - 1].message = `${message} -- edited @ ${time}`;
 		editEnabled = false;
 	};
 
