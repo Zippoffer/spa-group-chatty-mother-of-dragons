@@ -5,8 +5,9 @@ var Chatty = (function(chat) {
       messageLoader.open("GET", "js/messages.json");
       messageLoader.send();
       messageLoader.addEventListener("load", function () {
-        messages = JSON.parse(event.target.responseText).messages;
-        messages.forEach((message) => Chatty.writeMessages(message));
+        tempArray = JSON.parse(event.target.responseText).messages;
+        tempArray.forEach(Chatty.passToArray);
+        // messages.forEach((message) => Chatty.writeMessages(message));
       });
     };
 

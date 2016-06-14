@@ -1,5 +1,7 @@
 var Chatty = (function (chat) {
 
+  chat.messages = [];
+
   chat.writeMessages = function (message) {
     var timeStamp = new Date();
     var time = timeStamp.toUTCString();
@@ -18,9 +20,24 @@ var Chatty = (function (chat) {
     return string;
   };
 
+  chat.passToArray = function(arg) {
+    messageCounter++;
+    var tempMessage = {};
+    tempMessage.id = messageCounter;
+    tempMessage.user = arg.user;
+    tempMessage.message = arg.message;
+    Chatty.messages.push(tempMessage);
+  };
+
+  chat.getMesssagesArray = function() {
+    return Chatty.messages;
+  };
+
   return chat;
 
 })(Chatty || {});
+
+Chatty.loadMessages();
 
     // messageContainer.innerHTML = htmlString;
     // Chatty.deleteCounter();

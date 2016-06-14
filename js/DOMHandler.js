@@ -5,7 +5,6 @@ var elMessageInput = document.getElementById('messageInput'),
 	elMessagesDiv = document.getElementById('messagesDiv'),
 	elUserSelect = document.getElementById('userSelect'),
 	editEnabled = false,
-	messages = [],
 	messageCounter = 0;
 
 elThemeCheck.addEventListener("click", themeCheckHandler);
