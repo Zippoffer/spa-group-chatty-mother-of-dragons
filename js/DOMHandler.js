@@ -40,12 +40,14 @@ function clearButtonHandler() {
 
 function messageInputHandler(event) {
 	var message = elMessageInput.value;
+	var messageUser = elUserSelect.value;
+	console.log(messageUser);
 	if (event.keyCode === 13) {
 		if (message.length > 0) {
 			if (editEnabled) {
 				Chatty.commitEdit(message);
 			} else {
-				Chatty.newUIMessage(message, "Dan");
+				Chatty.newUIMessage(message, messageUser);
 				// Chatty.writeMessages(message);
 			}
 		} else {
