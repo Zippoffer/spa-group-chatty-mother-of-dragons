@@ -16,11 +16,11 @@ var Chatty = (function (chat) {
   chat.getHtmlString = function(id, message, time, user) {
     messageCounter++;
     var string = `<div id="message--${id}" class="message">
-                    <div class="user">${user}</div>
+                    <div class="user">${user}: </div>
                     <div id="content--${id}" class="content">${message}</div> 
-                    <div class="time">${time}</div>
                     <button type="edit" id="edit--${id}" class="btnEdit">Edit</button>
                     <button type="submit" id="delete--${id}" class="btnDelete">Delete</button>
+                    <div class="time">${time}</div>
                   </div>`;
     return string;
   };

@@ -20,6 +20,12 @@ body {
 	padding: 20px;
 }
 
+.message .user {
+  float: left;
+  color: #654b12;
+  padding-right: 4px;
+}
+
 .message .content {
   float: left;
 }
