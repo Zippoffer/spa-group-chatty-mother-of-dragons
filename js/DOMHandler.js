@@ -5,7 +5,6 @@ var elMessageInput = document.getElementById('messageInput'),
 	elMessagesDiv = document.getElementById('messagesDiv'),
 	elUserSelect = document.getElementById('userSelect'),
 	editEnabled = false,
-	messages = [],
 	messageCounter = 0;
 
 elThemeCheck.addEventListener("click", themeCheckHandler);
@@ -30,10 +29,12 @@ function textChangeHandler() {
 } 
 
 function clearButtonHandler() {
-	var el = document.getElementsByClassName('message');
-	for (var x = el.length - 1; x > -1; x--) {
-		el[x].remove();
-	}
+	// var el = document.getElementsByClassName('message');
+	// for (var x = el.length - 1; x > -1; x--) {
+	// 	el[x].remove();
+	// }
+	elMessagesDiv.innerHTML = '';
+	Chatty.messages = [];
 } 
 
 function messageInputHandler(event) {
@@ -43,9 +44,8 @@ function messageInputHandler(event) {
 			if (editEnabled) {
 				Chatty.commitEdit(message);
 			} else {
-				// messages.push(message);
-				// console.log(messages);
-				Chatty.writeMessages(message);
+				Chatty.newUIMessage(message, "Dan");
+				// Chatty.writeMessages(message);
 			}
 		} else {
 			alert("There is no message to add.");
