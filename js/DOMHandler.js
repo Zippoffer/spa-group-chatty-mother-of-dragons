@@ -3,7 +3,8 @@ var elMessageInput = document.getElementById('messageInput'),
 	elLargeTextCheck = document.getElementById('largeTextCheck'),
 	elBtnClear = document.getElementById('clearButton'),
 	elMessagesDiv = document.getElementById('messagesDiv'),
-	elUserSelect = document.getElementById('userSelect');
+	elUserSelect = document.getElementById('userSelect'),
+	messageCounter = 0;
 
 elThemeCheck.addEventListener("click", themeCheckHandler);
 elLargeTextCheck.addEventListener("click", textChangeHandler);
@@ -37,11 +38,13 @@ function messageInputHandler(event) {
 	var message = elMessageInput.value;
 	if (event.keyCode === 13) {
 		if (isValid(message)) {
-			if (Chatty.editEnabled === false) {
-				Chatty.printMessage(message);
-			} else {
-				Chatty.printEdit(message);
-			}
+			// this was .editEnabled === false, changed it to true and was 
+			// able to create new messages
+			// if (Chatty.editEnabled === true) {
+				Chatty.writeMessages(message);
+			// } else {
+			// 	Chatty.printEdit(message);
+			// }
 		}
 		elMessageInput.value = '';
 	}
