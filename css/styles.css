@@ -15,6 +15,10 @@ body {
 	position: center;
 }
 
+.message {
+	padding: 20px;
+}
+
 #navbar {
 	background-color: #A2B82C;
 	opacity: .9;
