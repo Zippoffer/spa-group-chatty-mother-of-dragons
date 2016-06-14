@@ -13,6 +13,7 @@ var Chatty = (function(chat) {
 		console.log(obj);
 		var tempArray = obj.users;
 		tempArray.forEach((temp) => users.push(temp));
+		loadUserSelectElement();
 	};
 	chat.getUsers = function() {
 		return users;

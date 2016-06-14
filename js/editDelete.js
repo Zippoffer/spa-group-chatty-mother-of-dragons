@@ -12,7 +12,6 @@ var Chatty = (function(chat) {
 		}
 		elMessagesDiv.innerHTML = '';
 		Chatty.writeMessages(Chatty.messages);
-		// document.getElementById(`message--${num}`).remove();
 	};
 
 	chat.editMessage = function(event) {
