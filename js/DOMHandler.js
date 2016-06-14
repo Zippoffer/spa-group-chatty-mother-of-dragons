@@ -5,6 +5,7 @@ var elMessageInput = document.getElementById('messageInput'),
 	elMessagesDiv = document.getElementById('messagesDiv'),
 	elUserSelect = document.getElementById('userSelect'),
 	editEnabled = false,
+	messages = [],
 	messageCounter = 0;
 
 elThemeCheck.addEventListener("click", themeCheckHandler);
@@ -42,6 +43,8 @@ function messageInputHandler(event) {
 			if (editEnabled) {
 				Chatty.commitEdit(message);
 			} else {
+				// messages.push(message);
+				// console.log(messages);
 				Chatty.writeMessages(message);
 			}
 		} else {

@@ -1,7 +1,5 @@
 var Chatty = (function(chat) {
 
-    var messages = [];
-
     chat.loadMessages = function () {
       var messageLoader = new XMLHttpRequest();
       messageLoader.open("GET", "js/messages.json");
