@@ -39,7 +39,11 @@ function messageInputHandler(event) {
 	var message = elMessageInput.value;
 	if (event.keyCode === 13) {
 		if (isValid(message)) {
-			Chatty.writeMessages(message);
+			if (editEnabled) {
+				Chatty.commitEdit(message)
+			} else {
+				Chatty.writeMessages(message);
+			}
 		}
 		elMessageInput.value = '';
 	}

@@ -1,16 +1,24 @@
 var Chatty = (function(chat) {
 
-	console.log('editDelete.js');
+	var messageToBeEdited;
 
 	chat.deleteMessage = function(event) {
 		var num = (event.target.id).split('--')[1];
-		console.log(num);
 		document.getElementById(`message--${num}`).remove();
 	};
 
-	chat.editMessage = function() {
-		console.log('editing');
-	}
+	chat.editMessage = function(event) {
+		editEnabled = true;
+		var num = (event.target.id).split('--')[1];
+		messageToBeEdited = document.getElementById(`content--${num}`);
+		messageInput.value = messageToBeEdited.innerHTML;
+		messageInput.focus();
+	};
+
+	chat.commitEdit = function(message) {
+		messageToBeEdited.innerHTML = message;
+		editEnabled = false;
+	};
 
 	return chat;
 
