@@ -1,5 +1,7 @@
 var Chatty = (function () {
 
+  Chatty.editEnabled = var false;
+
   Chatty.printMessage = function (message) {
 
 
@@ -13,8 +15,6 @@ var Chatty = (function () {
     htmlString += `<button type="submit" id=
     delete-${numMessages}>Delete</button>`;
     htmlString += `</div>`;
-
-    messageContainer.innerHTML += htmlString;
 
     Chatty.deleteCounter();
     Chatty.editCounter();

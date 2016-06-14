@@ -6,7 +6,8 @@ var Chatty = (function (chat) {
     console.log(messArray);
     var timeStamp = new Date();
     var time = timeStamp.toUTCString();
-    for (var x = 0; x < messArray.length; x++) {
+    if (messArray.length >= 20) { literalMessageCounter ++; };
+    for (var x = literalMessageCounter; x < messArray.length; x++) {
       elMessagesDiv.innerHTML += Chatty.getHtmlString(messArray[x].id, messArray[x].message, time, messArray[x].user);
     }    
     // elMessagesDiv.innerHTML += chat.getHtmlString(message,time);
