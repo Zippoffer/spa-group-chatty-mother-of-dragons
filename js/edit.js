@@ -7,7 +7,7 @@ var Chatty = (function () {
   Chatty.editDiv;
 
   Chatty.editCounter = function (content) {
-  Chatty.editEnabled = true;
+    // Chatty.editEnabled = true;
   // console.log("edit enabled: ", Chatty.editEnabled );
     var messages = document.getElementsByClassName("message");
 
