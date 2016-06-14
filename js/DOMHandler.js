@@ -42,9 +42,8 @@ function messageInputHandler(event) {
 			if (editEnabled) {
 				Chatty.commitEdit(message);
 			} else {
-				// messages.push(message);
-				// console.log(messages);
-				Chatty.writeMessages(message);
+				Chatty.newUIMessage(message, "Dan");
+				// Chatty.writeMessages(message);
 			}
 		} else {
 			alert("There is no message to add.");

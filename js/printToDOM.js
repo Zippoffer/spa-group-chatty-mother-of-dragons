@@ -2,20 +2,25 @@ var Chatty = (function (chat) {
 
   chat.messages = [];
 
-  chat.writeMessages = function (message) {
+  chat.writeMessages = function (messArray) {
+    console.log(messArray);
     var timeStamp = new Date();
     var time = timeStamp.toUTCString();
-    elMessagesDiv.innerHTML += chat.getHtmlString(message,time);
+    for (var x = 0; x < messArray.length; x++) {
+      elMessagesDiv.innerHTML += Chatty.getHtmlString(messArray[x].id, messArray[x].message, time, messArray[x].user);
+    }    
+    // elMessagesDiv.innerHTML += chat.getHtmlString(message,time);
     addEditDeleteHandlers();
   };
 
-  chat.getHtmlString = function(message, time) {
+  chat.getHtmlString = function(id, message, time, user) {
     messageCounter++;
-    var string = `<div id="message--${messageCounter}" class="message">
-                    <div id="content--${messageCounter}" class="content">${message}</div> 
+    var string = `<div id="message--${id}" class="message">
+                    <div class="user">${user}</div>
+                    <div id="content--${id}" class="content">${message}</div> 
                     <div class="time">${time}</div>
-                    <button type="edit" id="edit--${messageCounter}" class="btnEdit">Edit</button>
-                    <button type="submit" id="delete--${messageCounter}" class="btnDelete">Delete</button>
+                    <button type="edit" id="edit--${id}" class="btnEdit">Edit</button>
+                    <button type="submit" id="delete--${id}" class="btnDelete">Delete</button>
                   </div>`;
     return string;
   };
@@ -33,11 +38,19 @@ var Chatty = (function (chat) {
     return Chatty.messages;
   };
 
+  chat.newUIMessage = function(mess, user) {
+    var tempObject = {};
+    tempObject.message = mess;
+    tempObject.user = user;
+    Chatty.passToArray(tempObject);
+    elMessagesDiv.innerHTML = '';
+    Chatty.writeMessages(Chatty.getMesssagesArray());
+  };
+
   return chat;
 
 })(Chatty || {});
 
-Chatty.loadMessages();
 
     // messageContainer.innerHTML = htmlString;
     // Chatty.deleteCounter();
