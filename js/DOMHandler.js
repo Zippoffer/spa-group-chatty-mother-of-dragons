@@ -3,7 +3,10 @@ var elMessageInput = document.getElementById('messageInput'),
 	elLargeTextCheck = document.getElementById('largeTextCheck'),
 	elBtnClear = document.getElementById('clearButton'),
 	elMessagesDiv = document.getElementById('messagesDiv'),
-	elUserSelect = document.getElementById('userSelect');
+	elUserSelect = document.getElementById('userSelect'),
+	editEnabled = false,
+	messages = [],
+	messageCounter = 0;
 
 elThemeCheck.addEventListener("click", themeCheckHandler);
 elLargeTextCheck.addEventListener("click", textChangeHandler);
@@ -36,17 +39,33 @@ function clearButtonHandler() {
 function messageInputHandler(event) {
 	var message = elMessageInput.value;
 	if (event.keyCode === 13) {
-		if (isValid(message)) {
-			if (Chatty.editEnabled === false) {
-				Chatty.printMessage(message);
+		if (message.length > 0) {
+			if (editEnabled) {
+				Chatty.commitEdit(message);
 			} else {
-				Chatty.printEdit(message);
+				// messages.push(message);
+				// console.log(messages);
+				Chatty.writeMessages(message);
 			}
+		} else {
+			alert("There is no message to add.");
 		}
 		elMessageInput.value = '';
 	}
 }
 
+// need to test for message length
 function isValid(message) {
 	return true;
+}
+
+function addEditDeleteHandlers() {
+	var elBtnEdit = document.getElementsByClassName('btnEdit');
+	for (var x = 0; x < elBtnEdit.length; x++) {
+		elBtnEdit[x].addEventListener('click', Chatty.editMessage);
+	}
+	var elBtnDelete = document.getElementsByClassName('btnDelete');
+	for (var i = 0; i < elBtnDelete.length; i++) {
+		elBtnDelete[i].addEventListener('click', Chatty.deleteMessage);
+	}
 }
