@@ -4,6 +4,7 @@ var elMessageInput = document.getElementById('messageInput'),
 	elBtnClear = document.getElementById('clearButton'),
 	elMessagesDiv = document.getElementById('messagesDiv'),
 	elUserSelect = document.getElementById('userSelect'),
+	editEnabled = false,
 	messageCounter = 0;
 
 elThemeCheck.addEventListener("click", themeCheckHandler);
@@ -38,13 +39,7 @@ function messageInputHandler(event) {
 	var message = elMessageInput.value;
 	if (event.keyCode === 13) {
 		if (isValid(message)) {
-			// this was .editEnabled === false, changed it to true and was 
-			// able to create new messages
-			// if (Chatty.editEnabled === true) {
-				Chatty.writeMessages(message);
-			// } else {
-			// 	Chatty.printEdit(message);
-			// }
+			Chatty.writeMessages(message);
 		}
 		elMessageInput.value = '';
 	}
@@ -52,4 +47,15 @@ function messageInputHandler(event) {
 
 function isValid(message) {
 	return true;
+}
+
+function addEditDeleteHandlers() {
+	var elBtnEdit = document.getElementsByClassName('btnEdit');
+	for (var x = 0; x < elBtnEdit.length; x++) {
+		elBtnEdit[x].addEventListener('click', Chatty.editMessage);
+	}
+	var elBtnDelete = document.getElementsByClassName('btnDelete');
+	for (var i = 0; i < elBtnDelete.length; i++) {
+		elBtnDelete[i].addEventListener('click', Chatty.deleteMessage);
+	}
 }

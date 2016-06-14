@@ -4,10 +4,7 @@ var Chatty = (function (chat) {
     var timeStamp = new Date();
     var time = timeStamp.toUTCString();
     elMessagesDiv.innerHTML += chat.getHtmlString(message,time);
-    var tempDeleteButton = `delete--${messageCounter}`;
-    var tempEditButton = `edit--${messageCounter}`;
-    document.getElementById(tempDeleteButton).addEventListener('click', Chatty.deleteMessage);
-    document.getElementById(tempEditButton).addEventListener('click', Chatty.editMessage);
+    addEditDeleteHandlers();
   };
 
   chat.getHtmlString = function(message, time) {
@@ -15,11 +12,11 @@ var Chatty = (function (chat) {
     var string = `<div id="message--${messageCounter}" class="message">
                     <div id="content--${messageCounter}" class="content">${message}</div> 
                     <div class="time">${time}</div>
-                    <button type="edit" id="edit--${messageCounter}">Edit</button>
-                    <button type="submit" id="delete--${messageCounter}">Delete</button>
+                    <button type="edit" id="edit--${messageCounter}" class="btnEdit">Edit</button>
+                    <button type="submit" id="delete--${messageCounter}" class="btnDelete">Delete</button>
                   </div>`;
     return string;
-  }
+  };
 
   return chat;
 
