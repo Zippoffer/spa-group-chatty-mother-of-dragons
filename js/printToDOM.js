@@ -6,7 +6,8 @@ var Chatty = (function (chat) {
     console.log(messArray);
     var timeStamp = new Date();
     var time = timeStamp.toUTCString();
-    for (var x = 0; x < messArray.length; x++) {
+    if (messArray.length >= 20) { literalMessageCounter ++; };
+    for (var x = literalMessageCounter; x < messArray.length; x++) {
       elMessagesDiv.innerHTML += Chatty.getHtmlString(messArray[x].id, messArray[x].message, time, messArray[x].user);
     }    
     // elMessagesDiv.innerHTML += chat.getHtmlString(message,time);
@@ -16,11 +17,11 @@ var Chatty = (function (chat) {
   chat.getHtmlString = function(id, message, time, user) {
     messageCounter++;
     var string = `<div id="message--${id}" class="message">
-                    <div class="user">${user}</div>
+                    <div class="user">${user}: </div>
                     <div id="content--${id}" class="content">${message}</div> 
-                    <div class="time">${time}</div>
                     <button type="edit" id="edit--${id}" class="btnEdit">Edit</button>
                     <button type="submit" id="delete--${id}" class="btnDelete">Delete</button>
+                    <div class="time">${time}</div>
                   </div>`;
     return string;
   };

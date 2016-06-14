@@ -6,6 +6,7 @@ var elMessageInput = document.getElementById('messageInput'),
 	elUserSelect = document.getElementById('userSelect'),
 	editEnabled = false,
 	messageCounter = 0;
+	var literalMessageCounter = 0;
 
 elThemeCheck.addEventListener("click", themeCheckHandler);
 elLargeTextCheck.addEventListener("click", textChangeHandler);
