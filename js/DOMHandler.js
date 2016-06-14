@@ -4,6 +4,8 @@ var elMessageInput = document.getElementById('messageInput'),
 	elBtnClear = document.getElementById('clearButton'),
 	elMessagesDiv = document.getElementById('messagesDiv'),
 	elUserSelect = document.getElementById('userSelect'),
+	elFilter = document.getElementById('filterButton')
+	elUnFilter = document.getElementById('unfilter');
 	editEnabled = false,
 	messageCounter = 0;
 	var literalMessageCounter = 0;
@@ -12,6 +14,9 @@ elThemeCheck.addEventListener("click", themeCheckHandler);
 elLargeTextCheck.addEventListener("click", textChangeHandler);
 elBtnClear.addEventListener("click", clearButtonHandler);
 elMessageInput.addEventListener("keyup", messageInputHandler);
+elUnFilter.addEventListener("click", unfilter)
+
+elFilter.addEventListener("click", filterByUser)
 
 function themeCheckHandler() {
 	if (elThemeCheck.checked === true) {
@@ -83,3 +88,31 @@ function loadUserSelectElement() {
 function getOptionString(name) {
 	return `<option value="${name}">${name}</option>`;
 }
+
+
+function filterByUser() {
+
+	var selUser = elUserSelect.value;
+	var newUserArray = [];
+	for (var i = 0; i < Chatty.messages.length; i++) {
+		if (Chatty.messages[i].user === selUser) {
+			newUserArray.push(Chatty.messages[i]);
+		};
+	};
+	elMessagesDiv.innerHTML = "";
+	Chatty.writeMessages(newUserArray);
+
+	elUnFilter.classList.remove("hidden");
+	elFilter.classList.add("hidden");
+
+};
+
+function unfilter() {
+
+	elMessagesDiv.innerHTML ="";
+	Chatty.writeMessages(Chatty.messages);
+
+	elFilter.classList.remove("hidden");
+	elUnFilter.classList.add("hidden");
+};
+
