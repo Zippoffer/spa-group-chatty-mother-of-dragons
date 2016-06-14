@@ -38,17 +38,20 @@ function clearButtonHandler() {
 function messageInputHandler(event) {
 	var message = elMessageInput.value;
 	if (event.keyCode === 13) {
-		if (isValid(message)) {
+		if (message.length > 0) {
 			if (editEnabled) {
-				Chatty.commitEdit(message)
+				Chatty.commitEdit(message);
 			} else {
 				Chatty.writeMessages(message);
 			}
+		} else {
+			alert("There is no message to add.");
 		}
 		elMessageInput.value = '';
 	}
 }
 
+// need to test for message length
 function isValid(message) {
 	return true;
 }
