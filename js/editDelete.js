@@ -11,6 +11,8 @@ var Chatty = (function(chat) {
 			}
 		}
 		elMessagesDiv.innerHTML = '';
+		console.log(Chatty.messages.length, (Chatty.messages.length === 0))
+		if (Chatty.messages.length === 0) elBtnClear.disabled = true;
 		Chatty.writeMessages(Chatty.messages);
 	};
 
@@ -27,8 +29,13 @@ var Chatty = (function(chat) {
 		var timeStamp = new Date();
     	var time = timeStamp.toUTCString();
 		messageToBeEdited.innerHTML = `${message} -- edited @ ${time}`;
-		Chatty.messages[idToBeEdited - 1].message = `${message} -- edited @ ${time}`;
+		var editIndex = Chatty.messages.findIndex(Chatty.filterByID);
+		Chatty.messages[editIndex].message = `${message} -- edited @ ${time}`;
 		editEnabled = false;
+	};
+
+	chat.filterByID = function(obj) {
+		return obj.id == idToBeEdited;
 	};
 
 	return chat;

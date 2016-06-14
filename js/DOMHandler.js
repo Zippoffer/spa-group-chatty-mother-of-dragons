@@ -9,6 +9,7 @@ var elMessageInput = document.getElementById('messageInput'),
 	editEnabled = false,
 	messageCounter = 0;
 	var literalMessageCounter = 0;
+	var disableClearButton = false;
 
 elThemeCheck.addEventListener("click", themeCheckHandler);
 elLargeTextCheck.addEventListener("click", textChangeHandler);
@@ -35,10 +36,7 @@ function textChangeHandler() {
 } 
 
 function clearButtonHandler() {
-	// var el = document.getElementsByClassName('message');
-	// for (var x = el.length - 1; x > -1; x--) {
-	// 	el[x].remove();
-	// }
+	elBtnClear.disabled = true;
 	elMessagesDiv.innerHTML = '';
 	Chatty.messages = [];
 } 
@@ -46,13 +44,13 @@ function clearButtonHandler() {
 function messageInputHandler(event) {
 	var message = elMessageInput.value;
 	var messageUser = elUserSelect.value;
-	console.log(messageUser);
 	if (event.keyCode === 13) {
 		if (message.length > 0) {
 			if (editEnabled) {
 				Chatty.commitEdit(message);
 			} else {
 				Chatty.newUIMessage(message, messageUser);
+				elBtnClear.disabled = false;
 				// Chatty.writeMessages(message);
 			}
 		} else {
