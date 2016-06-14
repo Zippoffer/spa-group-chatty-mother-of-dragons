@@ -29,10 +29,12 @@ function textChangeHandler() {
 } 
 
 function clearButtonHandler() {
-	var el = document.getElementsByClassName('message');
-	for (var x = el.length - 1; x > -1; x--) {
-		el[x].remove();
-	}
+	// var el = document.getElementsByClassName('message');
+	// for (var x = el.length - 1; x > -1; x--) {
+	// 	el[x].remove();
+	// }
+	elMessagesDiv.innerHTML = '';
+	Chatty.messages = [];
 } 
 
 function messageInputHandler(event) {
