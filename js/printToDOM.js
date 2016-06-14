@@ -9,8 +9,9 @@ var Chatty = (function (chat) {
     if (messArray.length >= 20) { literalMessageCounter ++; };
 
     if (elMessageInput.value === "display all") { 
-      elMessageInput.value = "ytf"; 
-      literalMessageCounter = 0; 
+      literalMessageCounter = 0;
+      messArray.pop();
+
       console.log("elMessage", elMessageInput.value);
     };
 
