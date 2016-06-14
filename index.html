@@ -4,34 +4,35 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title></title>
-  <link rel="stylesheet" media="(max-width: 1036px)" href="css/styles.css">
+  <link rel="stylesheet"  href="css/styles.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
 </head>
 <body>
-
+<div class="container">
   <nav  id="navbar" class="navbar navbar-inverse navbar-fixed-top">
   	<ul>
-  		<div id="nav">
+  		<div class="container" id="nav">
 
 
 	  		<div class="row">
 
-		  		<article id="logo" class="col-sm-4">
-				  	<a class="navbar-brand" rel="home" href="#" title="Buy Sell Rent Everyting">
+		  		<div id="logo" class="col-sm-4">
+				  	<div class="navbar-brand" rel="home" href="#" title="">
 		       			 <img style="max-width:50px; margin-top: -7px; height: 60px"
-		            	 src="https://thingsisayanddobytalise.files.wordpress.com/2013/04/little-miss-chatterbox.jpg" class="img-circle" class="img-responsive">
-	   				 </a>
-    			</article>
+		            	 src="http://artofconversation.typepad.com/.a/6a00d83452194e69e2017ee81ffd85970d-320wi" class="img-circle" class="img-responsive">
+	   				 </div>
+    			</div>
 
-		  		<input class="col-sm-4" id="messageInput" class="col-sm-4" type="text" name="messageInput" placeholder="input message here">
-		  		<button class="span4" id="clearButton" class="col-sm-4" type="button">clear</button>
+          <div class="container">
+  		  		<input class="col-sm-4" id="messageInput" class="col-sm-4" type="text" name="messageInput" placeholder="input message here">
+  		  		<button class="span4" id="clearButton" class="col-sm-4" type="button">clear</button>
+          </div>
 	  		</div>
 
-
-	  		<div class="row">
+	  		<div class="" class="row">
 		  		<input class="span6" id="themeCheck" type="checkbox" name="theme">theme</input>
-		  		<input class="span6" id="largeTextCheck" type="checkbox" name="largeText">large text</input>
+		  		<input class="span6" id="largeTextCheck" type="checkbox" name="largeText">largeText</input>
           <select class="span6" name="" id="userSelect"></select>
         </div>
 
@@ -39,12 +40,12 @@
     </ul>
   </nav>
   
-  <div  class="row">
+  <div id="messageBox" class="container" class="row">
     <div class="span8" id="messagesDiv">
     <p></p> 
     </div>
   </div>
-
+</div>
   <script src="js/initJSON.js"></script>
   <script src="js/edit.js"></script>
   <script src="js/printToDOM.js"></script>
