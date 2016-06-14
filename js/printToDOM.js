@@ -4,8 +4,6 @@ var Chatty = (function (chat) {
 
   chat.writeMessages = function (messArray) {
     console.log(messArray);
-    var timeStamp = new Date();
-    var time = timeStamp.toUTCString();
     if (messArray.length >= 20) { literalMessageCounter ++; };
 
     if (elMessageInput.value === "display all") { 
@@ -16,7 +14,7 @@ var Chatty = (function (chat) {
     };
 
     for (var x = literalMessageCounter; x < messArray.length; x++) {
-      elMessagesDiv.innerHTML += Chatty.getHtmlString(messArray[x].id, messArray[x].message, time, messArray[x].user);
+      elMessagesDiv.innerHTML += Chatty.getHtmlString(messArray[x].id, messArray[x].message, messArray[x].time, messArray[x].user);
     }    
     // elMessagesDiv.innerHTML += chat.getHtmlString(message,time);
     addEditDeleteHandlers();
@@ -36,10 +34,13 @@ var Chatty = (function (chat) {
 
   chat.passToArray = function(arg) {
     messageCounter++;
+    var timeStamp = new Date();
+    var time = timeStamp.toUTCString();
     var tempMessage = {};
     tempMessage.id = messageCounter;
     tempMessage.user = arg.user;
     tempMessage.message = arg.message;
+    tempMessage.time = time;
     Chatty.messages.push(tempMessage);
   };
 
@@ -49,8 +50,11 @@ var Chatty = (function (chat) {
 
   chat.newUIMessage = function(mess, user) {
     var tempObject = {};
+    var timeStamp = new Date();
+    var time = timeStamp.toUTCString();
     tempObject.message = mess;
     tempObject.user = user;
+    tempObject.time = time;
     Chatty.passToArray(tempObject);
     elMessagesDiv.innerHTML = '';
     Chatty.writeMessages(Chatty.getMesssagesArray());
