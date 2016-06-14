@@ -29,10 +29,8 @@ var Chatty = (function(chat) {
 		var timeStamp = new Date();
     	var time = timeStamp.toUTCString();
 		messageToBeEdited.innerHTML = `${message} -- edited @ ${time}`;
-		console.log(Chatty.messages.findIndex(Chatty.filterByID));
-		// var indexObj = Chatty.messages.filter(Chatty.filterByID);
-		// console.log(Chatty.messages.indexOf(indexObj));
-		// Chatty.messages[idToBeEdited - 1].message = `${message} -- edited @ ${time}`;
+		var editIndex = Chatty.messages.findIndex(Chatty.filterByID);
+		Chatty.messages[editIndex].message = `${message} -- edited @ ${time}`;
 		editEnabled = false;
 	};
 
